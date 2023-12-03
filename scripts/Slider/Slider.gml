@@ -19,6 +19,19 @@ function draw_slider()
 	draw_line_width(_min_x, _y, _max_x, _y, _line_width);
 }
 
+function set_slider_value_with_mouse()
+{
+	var _string_half_width = string_width(text) / 2;
+	
+	var _min_x = x - _string_half_width;
+	var _max_x = x + _string_half_width;
+	
+	var _value = (mouse_x - _min_x) / (_max_x - _min_x);
+	_value = clamp(_value, 0.0, 1.0);
+	
+	set_slider_value(_value);
+}
+
 function set_slider_value(_value)
 {
 	slider_value = clamp(_value, 0.0, 1.0);
