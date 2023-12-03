@@ -1,0 +1,1 @@
+selected_item_index = 0;
